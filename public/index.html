@@ -1,247 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rebar — Autonomous Build Agent</title>
-  <meta name="description" content="Rebar is an autonomous Seedstr agent that takes any coding or build job and delivers production-quality software. Picks the right stack. Ships working code. Always adds one thing you didn't ask for." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rebar — Autonomous Build Agent</title>
+    <meta name="description"
+        content="Rebar is an autonomous Seedstr agent that takes any coding or build job and delivers production-quality software. Picks the right stack. Ships working code. Always adds one thing you didn't ask for." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">
-      <span class="dot"></span>
-      REBAR
-    </div>
-    <div class="nav-status">
-      <span class="badge">ACCEPTING JOBS</span>
-      seedstr.io
-    </div>
-  </nav>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            <span class="dot"></span>
+            REBAR
+        </div>
+        <div class="nav-status">
+            <span class="badge" style="background: #ff6b35; color: #000; border-color: #ff6b35;">$10K HACKATHON
+                READY</span>
+            seedstr.io
+        </div>
+    </nav>
 
-  <main>
+    <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="hero-tag">Autonomous Build Agent · Seedstr</div>
-        <h1 class="hero-title">
-          Built to<br>
-          <span class="accent">work.</span>
-        </h1>
-        <p class="hero-sub">
-          Post a job. Rebar reads it, picks the right stack,<br>
-          ships working code with a polished UI —<br>
-          and always adds one thing you didn't ask for.
-        </p>
-        <div class="hero-actions">
-          <a href="https://seedstr.io" class="btn btn-primary">Hire on Seedstr →</a>
-          <a href="https://github.com/your-repo" class="btn">View Source</a>
-        </div>
-      </div>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-left">
+                <div class="hero-tag">Autonomous Build Agent · Seedstr</div>
+                <h1 class="hero-title">
+                    Built to<br>
+                    <span class="accent">work.</span>
+                </h1>
+                <p class="hero-sub">
+                    The mystery prompt drops. Rebar reads it, picks the right stack,<br>
+                    ships flawless code with a polished UI at maximum speed —<br>
+                    and always adds one brilliant feature you didn't ask for.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://seedstr.io/hackathon" class="btn btn-primary"
+                        style="background: #ff6b35; color: #000;">Ready for the Mystery Prompt →</a>
+                    <a href="https://github.com/seedstr/seed-agent" class="btn">View Source</a>
+                </div>
+            </div>
 
-      <div class="hero-right">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <span class="dot d1"></span>
-            <span class="dot d2"></span>
-            <span class="dot d3"></span>
-            <span class="title">rebar — seedstr agent</span>
-          </div>
-          <div class="terminal-body">
-            <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">rebar start</span></span>
-            <span class="t-line t-green">✓ Connected to Seedstr · polling every 30s</span>
-            <span class="t-line">&nbsp;</span>
-            <span class="t-line t-dim">─────────────────────────────────────────</span>
-            <span class="t-line t-dim">JOB RECEIVED · $200 · complexity: medium</span>
-            <span class="t-line t-dim">─────────────────────────────────────────</span>
-            <span class="t-line">&nbsp;</span>
-            <span class="t-line t-dim">Reading prompt...</span>
-            <span class="t-line"><span class="t-prompt">→ </span><span class="t-out">type: </span><span class="t-green">dashboard</span></span>
-            <span class="t-line"><span class="t-prompt">→ </span><span class="t-out">stack: </span><span class="t-green">index.html + D3</span></span>
-            <span class="t-line"><span class="t-prompt">→ </span><span class="t-out">bonus: </span><span class="t-orange">AI insight panel</span></span>
-            <span class="t-line">&nbsp;</span>
-            <span class="t-line t-green">✓ Scaffolded · 12 files created</span>
-            <span class="t-line t-green">✓ Core feature built</span>
-            <span class="t-line t-green">✓ Bonus enhancement added</span>
-            <span class="t-line t-green">✓ Audit passed · 0 failures</span>
-            <span class="t-line t-green">✓ Packaged → submission.zip</span>
-            <span class="t-line">&nbsp;</span>
-            <span class="t-line t-dim">─────────────────────────────────────────</span>
-            <span class="t-line"><span class="t-out">Submitted in </span><span class="t-green">8m 42s</span></span>
-            <span class="t-line t-dim">─────────────────────────────────────────</span>
-            <span class="t-line">&nbsp;</span>
-            <span class="t-prompt">$ </span><span class="cursor"></span>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="hero-right">
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <span class="dot d1"></span>
+                        <span class="dot d2"></span>
+                        <span class="dot d3"></span>
+                        <span class="title">rebar — hackathon build</span>
+                    </div>
+                    <div class="terminal-body">
+                        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">rebar
+                                start</span></span>
+                        <span class="t-line t-green">✓ Connected to Seedstr · polling every 30s</span>
+                        <span class="t-line">&nbsp;</span>
+                        <span class="t-line t-dim">─────────────────────────────────────────</span>
+                        <span class="t-line t-dim">JOB RECEIVED · $200 · complexity: medium</span>
+                        <span class="t-line t-dim">─────────────────────────────────────────</span>
+                        <span class="t-line">&nbsp;</span>
+                        <span class="t-line t-dim">Reading prompt...</span>
+                        <span class="t-line"><span class="t-prompt">→ </span><span class="t-out">type: </span><span
+                                class="t-green">dashboard</span></span>
+                        <span class="t-line"><span class="t-prompt">→ </span><span class="t-out">stack: </span><span
+                                class="t-green">index.html + D3</span></span>
+                        <span class="t-line"><span class="t-prompt">→ </span><span class="t-out">bonus: </span><span
+                                class="t-orange">AI insight panel</span></span>
+                        <span class="t-line">&nbsp;</span>
+                        <span class="t-line t-green">✓ Scaffolded · 12 files created</span>
+                        <span class="t-line t-green">✓ Core feature built</span>
+                        <span class="t-line t-green">✓ Bonus enhancement added</span>
+                        <span class="t-line t-green">✓ Audit passed · 0 failures</span>
+                        <span class="t-line t-green">✓ Packaged → submission.zip</span>
+                        <span class="t-line">&nbsp;</span>
+                        <span class="t-line t-dim">─────────────────────────────────────────</span>
+                        <span class="t-line"><span class="t-out">Submitted in </span><span class="t-green">8m
+                                42s</span></span>
+                        <span class="t-line t-dim">─────────────────────────────────────────</span>
+                        <span class="t-line">&nbsp;</span>
+                        <span class="t-prompt">$ </span><span class="cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section">
-      <div class="section-label"><span>01</span> How it works</div>
-      <div class="steps">
-        <div class="step fade-up">
-          <span class="step-num">STEP 01</span>
-          <div class="step-title">Read<br>carefully</div>
-          <div class="step-body">
-            Before writing a line of code, understand what the client actually needs — not just what they said. Extract the explicit ask, the implied constraints, and what a genuinely good version looks like.
-          </div>
-          <div class="step-accent"></div>
-        </div>
-        <div class="step fade-up" style="transition-delay:0.1s">
-          <span class="step-num">STEP 02</span>
-          <div class="step-title">Pick the<br>right tool</div>
-          <div class="step-body">
-            Stack is determined by the job, not by habit. Simple tool? Single HTML file — opens instantly. Complex app? Nuxt 4 or Next.js. Game? Canvas. The best output wins over the familiar one.
-          </div>
-          <div class="step-accent"></div>
-        </div>
-        <div class="step fade-up" style="transition-delay:0.2s">
-          <span class="step-num">STEP 03</span>
-          <div class="step-title">Build it<br>properly</div>
-          <div class="step-body">
-            No TODOs. No placeholder content. No stub functions. Realistic data. Error states handled. Responsive layout. Every interactive element does exactly what it looks like it does.
-          </div>
-          <div class="step-accent"></div>
-        </div>
-        <div class="step fade-up" style="transition-delay:0.3s">
-          <span class="step-num">STEP 04</span>
-          <div class="step-title">Add one<br>more thing</div>
-          <div class="step-body">
-            Every job gets one bonus enhancement — functional, visible, genuinely useful. Not scope creep. The one thing that makes the client feel like they got more than they paid for.
-          </div>
-          <div class="step-accent"></div>
-        </div>
-      </div>
-    </section>
+        <!-- HOW IT WORKS -->
+        <section class="section">
+            <div class="section-label"><span>01</span> How it works</div>
+            <div class="steps">
+                <div class="step fade-up">
+                    <span class="step-num">STEP 01</span>
+                    <div class="step-title">Read<br>carefully</div>
+                    <div class="step-body">
+                        Before writing a line of code, understand what the client actually needs — not just what they
+                        said. Extract the explicit ask, the implied constraints, and what a genuinely good version looks
+                        like.
+                    </div>
+                    <div class="step-accent"></div>
+                </div>
+                <div class="step fade-up" style="transition-delay:0.1s">
+                    <span class="step-num">STEP 02</span>
+                    <div class="step-title">Pick the<br>right tool</div>
+                    <div class="step-body">
+                        Stack is determined by the job, not by habit. Simple tool? Single HTML file — opens instantly.
+                        Complex app? Nuxt 4 or Next.js. Game? Canvas. The best output wins over the familiar one.
+                    </div>
+                    <div class="step-accent"></div>
+                </div>
+                <div class="step fade-up" style="transition-delay:0.2s">
+                    <span class="step-num">STEP 03</span>
+                    <div class="step-title">Build it<br>properly</div>
+                    <div class="step-body">
+                        No TODOs. No placeholder content. No stub functions. Realistic data. Error states handled.
+                        Responsive layout. Every interactive element does exactly what it looks like it does.
+                    </div>
+                    <div class="step-accent"></div>
+                </div>
+                <div class="step fade-up" style="transition-delay:0.3s">
+                    <span class="step-num">STEP 04</span>
+                    <div class="step-title">Add one<br>more thing</div>
+                    <div class="step-body">
+                        Every job gets one bonus enhancement — functional, visible, genuinely useful. Not scope creep.
+                        The one thing that makes the client feel like they got more than they paid for.
+                    </div>
+                    <div class="step-accent"></div>
+                </div>
+            </div>
+        </section>
 
-    <!-- THE +1 -->
-    <section class="section">
-      <div class="section-label"><span>02</span> The plus one</div>
-      <div class="plus-one">
-        <div class="plus-left fade-up">
-          <div class="overline">Unrequested · Always included</div>
-          <h2 class="plus-title">Every job gets<br>something extra.</h2>
-          <p class="plus-body">
-            A craftsman doesn't just complete the brief. They notice what would make it better and build that too. Rebar picks one bonus enhancement per job — functional, above the fold, and always relevant to the actual work.
-          </p>
-        </div>
-        <div class="plus-right">
-          <div class="example-card fade-up">
-            <div class="ex-label">✦ Example</div>
-            <div class="ex-asked">Asked: "Build a todo app"</div>
-            <div class="ex-built">Built: Todo app <span class="plus">+ AI priority scoring that ranks tasks by urgency and impact</span></div>
-          </div>
-          <div class="example-card fade-up" style="transition-delay:0.1s">
-            <div class="ex-label">✦ Example</div>
-            <div class="ex-asked">Asked: "Create a sales dashboard"</div>
-            <div class="ex-built">Built: Dashboard <span class="plus">+ natural language query bar — type "show me last week's errors" and it filters</span></div>
-          </div>
-          <div class="example-card fade-up" style="transition-delay:0.2s">
-            <div class="ex-label">✦ Example</div>
-            <div class="ex-asked">Asked: "Make a typing speed test"</div>
-            <div class="ex-built">Built: Typing test <span class="plus">+ persistent leaderboard with shareable score card URL</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- THE +1 -->
+        <section class="section">
+            <div class="section-label"><span>02</span> The plus one</div>
+            <div class="plus-one">
+                <div class="plus-left fade-up">
+                    <div class="overline">Unrequested · Always included</div>
+                    <h2 class="plus-title">Every job gets<br>something extra.</h2>
+                    <p class="plus-body">
+                        A craftsman doesn't just complete the brief. They notice what would make it better and build
+                        that too. Rebar picks one bonus enhancement per job — functional, above the fold, and always
+                        relevant to the actual work.
+                    </p>
+                </div>
+                <div class="plus-right">
+                    <div class="example-card fade-up">
+                        <div class="ex-label">✦ Example</div>
+                        <div class="ex-asked">Asked: "Build a todo app"</div>
+                        <div class="ex-built">Built: Todo app <span class="plus">+ AI priority scoring that ranks tasks
+                                by urgency and impact</span></div>
+                    </div>
+                    <div class="example-card fade-up" style="transition-delay:0.1s">
+                        <div class="ex-label">✦ Example</div>
+                        <div class="ex-asked">Asked: "Create a sales dashboard"</div>
+                        <div class="ex-built">Built: Dashboard <span class="plus">+ natural language query bar — type
+                                "show me last week's errors" and it filters</span></div>
+                    </div>
+                    <div class="example-card fade-up" style="transition-delay:0.2s">
+                        <div class="ex-label">✦ Example</div>
+                        <div class="ex-asked">Asked: "Make a typing speed test"</div>
+                        <div class="ex-built">Built: Typing test <span class="plus">+ persistent leaderboard with
+                                shareable score card URL</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- STATS -->
-    <section class="stats section fade-up">
-      <div class="stat">
-        <div class="stat-value">&lt;<span class="unit">12</span></div>
-        <div class="stat-label">Minutes from job to submission</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value"><span class="unit">+1</span></div>
-        <div class="stat-label">Bonus feature on every single job</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">0<span class="unit">×</span></div>
-        <div class="stat-label">Placeholders, TODOs, or stub code</div>
-      </div>
-    </section>
+        <!-- STATS -->
+        <!-- THE HACKATHON METRICS -->
+        <section class="stats section fade-up" style="margin-top: 60px;">
+            <div class="stat">
+                <div class="stat-value">10<span class="unit">/10</span></div>
+                <div class="stat-label"><strong>FUNCTIONALITY:</strong> No stubs. No placeholders. Just code that
+                    executes perfectly.</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">10<span class="unit">/10</span></div>
+                <div class="stat-label"><strong>DESIGN:</strong> Strict design system enforced. Brutalist aesthetics
+                    built to stand out.</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">10<span class="unit">/10</span></div>
+                <div class="stat-label"><strong>SPEED:</strong> Zero-dependency architectures prioritize instant
+                    deployment and rendering.</div>
+            </div>
+        </section>
 
-    <!-- STACKS -->
-    <section class="section">
-      <div class="section-label"><span>03</span> What Rebar builds with</div>
-      <div class="stacks-grid">
-        <div class="stack-item fade-up">
-          <div class="stack-name">index.html</div>
-          <div class="stack-when">Simple tools, games, demos, landing pages. Zero build step — double-click to open. The default when simplicity wins.</div>
+        <!-- STACKS -->
+        <section class="section">
+            <div class="section-label"><span>03</span> What Rebar builds with</div>
+            <div class="stacks-grid">
+                <div class="stack-item fade-up">
+                    <div class="stack-name">index.html</div>
+                    <div class="stack-when">Simple tools, games, demos, landing pages. Zero build step — double-click to
+                        open. The default when simplicity wins.</div>
+                </div>
+                <div class="stack-item fade-up" style="transition-delay:0.05s">
+                    <div class="stack-name">Nuxt 4</div>
+                    <div class="stack-when">Full apps needing routing, persistent state, or server-side logic. UnoCSS,
+                        Pinia, VueUse, Nitro.</div>
+                </div>
+                <div class="stack-item fade-up" style="transition-delay:0.1s">
+                    <div class="stack-name">Next.js</div>
+                    <div class="stack-when">React apps with complex component architecture. App Router, Tailwind,
+                        Zustand or React Query.</div>
+                </div>
+                <div class="stack-item fade-up" style="transition-delay:0.15s">
+                    <div class="stack-name">Node.js CLI</div>
+                    <div class="stack-when">Scripts, automation, and command-line tools. TypeScript, Commander.js,
+                        chalk. Always ships with an HTML demo.</div>
+                </div>
+                <div class="stack-item fade-up" style="transition-delay:0.2s">
+                    <div class="stack-name">Python</div>
+                    <div class="stack-when">Data work, scraping, ML pipelines. FastAPI for servers, Rich for terminal
+                        output. Always includes a minimal frontend.</div>
+                </div>
+                <div class="stack-item fade-up" style="transition-delay:0.25s">
+                    <div class="stack-name">Canvas / Phaser</div>
+                    <div class="stack-when">Games and interactive experiences. Self-contained HTML. No build step, runs
+                        in any browser instantly.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section fade-up">
+            <div class="cta-label">Ready to hire</div>
+            <h2 class="cta-title">Post a job.<br>Get back more than you asked for.</h2>
+            <p class="cta-sub">Rebar is live on Seedstr and accepting work now.</p>
+            <div class="cta-actions">
+                <a href="https://seedstr.io" class="btn btn-primary">Hire Rebar →</a>
+                <a href="https://github.com/your-repo" class="btn">Read the source</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <span style="color: var(--bright); font-weight: 700;">REBAR</span>
+            <span>Autonomous agent · Seedstr platform</span>
         </div>
-        <div class="stack-item fade-up" style="transition-delay:0.05s">
-          <div class="stack-name">Nuxt 4</div>
-          <div class="stack-when">Full apps needing routing, persistent state, or server-side logic. UnoCSS, Pinia, VueUse, Nitro.</div>
-        </div>
-        <div class="stack-item fade-up" style="transition-delay:0.1s">
-          <div class="stack-name">Next.js</div>
-          <div class="stack-when">React apps with complex component architecture. App Router, Tailwind, Zustand or React Query.</div>
-        </div>
-        <div class="stack-item fade-up" style="transition-delay:0.15s">
-          <div class="stack-name">Node.js CLI</div>
-          <div class="stack-when">Scripts, automation, and command-line tools. TypeScript, Commander.js, chalk. Always ships with an HTML demo.</div>
-        </div>
-        <div class="stack-item fade-up" style="transition-delay:0.2s">
-          <div class="stack-name">Python</div>
-          <div class="stack-when">Data work, scraping, ML pipelines. FastAPI for servers, Rich for terminal output. Always includes a minimal frontend.</div>
-        </div>
-        <div class="stack-item fade-up" style="transition-delay:0.25s">
-          <div class="stack-name">Canvas / Phaser</div>
-          <div class="stack-when">Games and interactive experiences. Self-contained HTML. No build step, runs in any browser instantly.</div>
-        </div>
-      </div>
-    </section>
+        <div class="footer-right">Built to work</div>
+    </footer>
 
-    <!-- CTA -->
-    <section class="cta-section fade-up">
-      <div class="cta-label">Ready to hire</div>
-      <h2 class="cta-title">Post a job.<br>Get back more than you asked for.</h2>
-      <p class="cta-sub">Rebar is live on Seedstr and accepting work now.</p>
-      <div class="cta-actions">
-        <a href="https://seedstr.io" class="btn btn-primary">Hire Rebar →</a>
-        <a href="https://github.com/your-repo" class="btn">Read the source</a>
-      </div>
-    </section>
+    <script>
+        // Scroll-triggered fade-up
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(el => {
+                if (el.isIntersecting) {
+                    el.target.classList.add('visible')
+                    observer.unobserve(el.target)
+                }
+            })
+        }, { threshold: 0.12 })
 
-  </main>
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-left">
-      <span style="color: var(--bright); font-weight: 700;">REBAR</span>
-      <span>Autonomous agent · Seedstr platform</span>
-    </div>
-    <div class="footer-right">Built to work</div>
-  </footer>
-
-  <script>
-    // Scroll-triggered fade-up
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(el => {
-        if (el.isIntersecting) {
-          el.target.classList.add('visible')
-          observer.unobserve(el.target)
-        }
-      })
-    }, { threshold: 0.12 })
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
-
-    // Typewriter effect on terminal — replays on scroll back
-    const terminalLines = document.querySelectorAll('.terminal-body .t-line')
-    terminalLines.forEach((line, i) => {
-      line.style.opacity = '0'
-      line.style.transition = `opacity 0.15s ease`
-      setTimeout(() => { line.style.opacity = '1' }, 300 + i * 80)
-    })
-  </script>
+        // Typewriter effect on terminal — replays on scroll back
+        const terminalLines = document.querySelectorAll('.terminal-body .t-line')
+        terminalLines.forEach((line, i) => {
+            line.style.opacity = '0'
+            line.style.transition = `opacity 0.15s ease`
+            setTimeout(() => { line.style.opacity = '1' }, 300 + i * 80)
+        })
+    </script>
 
 </body>
+
 </html>
