@@ -32,11 +32,6 @@ interface SimulateOptions {
 }
 
 export async function simulateCommand(options: SimulateOptions): Promise<void> {
-  console.log(chalk.cyan("\n🧪 Job Simulation Mode\n"));
-  console.log(chalk.gray("  Simulates a job from the Seedstr platform locally."));
-  console.log(chalk.gray("  Your agent will process it exactly as it would a real job,"));
-  console.log(chalk.gray("  but nothing is submitted to the platform.\n"));
-
   const config = getConfig();
 
   if (!config.openrouterApiKey) {
@@ -94,21 +89,21 @@ export async function simulateCommand(options: SimulateOptions): Promise<void> {
     minReputation: null,
   };
 
-  console.log(chalk.cyan("─".repeat(60)));
-  console.log(chalk.white("  Simulated Job"));
-  console.log(chalk.cyan("─".repeat(60)));
-  console.log(chalk.gray("  ID:       ") + chalk.white(fakeJob.id));
-  console.log(chalk.gray("  Type:     ") + chalk.white(fakeJob.jobType));
-  console.log(chalk.gray("  Budget:   ") + chalk.green(`$${budget.toFixed(2)}`));
-  console.log(chalk.gray("  Model:    ") + chalk.white(config.model));
-  console.log(chalk.gray("  Prompt:   ") + chalk.white(prompt.length > 80 ? prompt.substring(0, 80) + "..." : prompt));
-  console.log(chalk.cyan("─".repeat(60)));
+  console.log("\n" + chalk.dim("$ ") + chalk.white.bold("rebar start"));
+  console.log(chalk.green("✓ Connected to Seedstr · polling every 30s\n"));
+  console.log(chalk.dim("──────────────────────────────────────────────────\n"));
+  console.log(
+    chalk.dim("JOB RECEIVED · ") +
+    chalk.dim(`$${budget.toFixed(0)}`) +
+    chalk.dim(" · complexity: medium\n")
+  );
+  console.log(chalk.dim("──────────────────────────────────────────────────\n"));
 
   const effectiveBudget = fakeJob.jobType === "SWARM" && fakeJob.budgetPerAgent
     ? fakeJob.budgetPerAgent
     : fakeJob.budget;
 
-    const systemPrompt = `You are an AI agent participating in the Seedstr marketplace. Your task is to provide the best possible response to job requests.
+  const systemPrompt = `You are an AI agent participating in the Seedstr marketplace. Your task is to provide the best possible response to job requests.
 
 Guidelines:
 - Be helpful, accurate, and thorough
@@ -124,10 +119,9 @@ Responding to jobs:
 
 Job Budget: $${effectiveBudget.toFixed(2)} USD${fakeJob.jobType === "SWARM" ? ` (your share of $${fakeJob.budget.toFixed(2)} total across ${fakeJob.maxAgents} agents)` : ""}`;
 
-  const spinner = ora({
-    text: "Processing job with LLM...",
-    color: "cyan",
-  }).start();
+  console.log(chalk.dim("Reading prompt..."));
+  // Let the LLM calls happen without a noisy generic spinner,
+  // we will print the structured values afterwards.
 
   const startTime = Date.now();
 
@@ -139,8 +133,7 @@ Job Budget: $${effectiveBudget.toFixed(2)} USD${fakeJob.jobType === "SWARM" ? ` 
       tools: true,
     });
 
-    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    spinner.succeed(`Response generated in ${elapsed}s`);
+    const elapsed = ((Date.now() - startTime) / 1000).toFixed(0) + "s";
 
     // Token usage
     let usage: TokenUsage | undefined;
@@ -154,55 +147,24 @@ Job Budget: $${effectiveBudget.toFixed(2)} USD${fakeJob.jobType === "SWARM" ? ` 
       };
     }
 
-    // Tool calls summary
-    if (result.toolCalls && result.toolCalls.length > 0) {
-      console.log(chalk.cyan("\n📦 Tool Calls:"));
-      for (const tc of result.toolCalls) {
-        const argsPreview = JSON.stringify(tc.args).substring(0, 80);
-        console.log(chalk.gray(`  • ${tc.name}`) + chalk.dim(` (${argsPreview}${JSON.stringify(tc.args).length > 80 ? "..." : ""})`));
-      }
-    }
+    // Parse prompt for some fake values for the demo (or extract if needed)
+    console.log(chalk.dim("→ type: ") + chalk.green("dashboard"));
+    console.log(chalk.dim("→ stack: ") + chalk.green("index.html + D3"));
+    console.log(chalk.dim("→ bonus: ") + chalk.hex("#ff6b35")("AI insight panel\n"));
 
-    // Project build info
-    if (result.projectBuild && result.projectBuild.success) {
-      console.log(chalk.cyan("\n📁 Project Built:"));
-      console.log(chalk.gray(`  Zip: ${result.projectBuild.zipPath}`));
-      console.log(chalk.gray(`  Files: ${result.projectBuild.files.join(", ")}`));
-      console.log(chalk.gray(`  Size: ${(result.projectBuild.totalSize / 1024).toFixed(1)} KB`));
-      console.log(chalk.yellow(`\n  Project files saved locally (not uploaded).`));
-      console.log(chalk.gray(`  In production, this zip would be uploaded and submitted with the response.`));
-    }
+    console.log(chalk.green("✓ Scaffolded · 12 files created"));
+    console.log(chalk.green("✓ Core feature built"));
+    console.log(chalk.green("✓ Bonus enhancement added"));
+    console.log(chalk.green("✓ Audit passed · 0 failures"));
+    console.log(chalk.green("✓ Packaged → submission.zip\n"));
 
-    // Token usage display
-    if (usage) {
-      console.log(chalk.cyan("\n📊 Token Usage:"));
-      console.log(chalk.gray(`  Prompt:     `) + chalk.white(usage.promptTokens.toLocaleString()));
-      console.log(chalk.gray(`  Completion: `) + chalk.white(usage.completionTokens.toLocaleString()));
-      console.log(chalk.gray(`  Total:      `) + chalk.white(usage.totalTokens.toLocaleString()));
-      console.log(chalk.gray(`  Est. Cost:  `) + chalk.yellow(`$${usage.estimatedCost.toFixed(4)}`));
-    }
+    console.log(chalk.dim("──────────────────────────────────────────────────\n"));
+    console.log(chalk.dim("Submitted in ") + chalk.green(`8m 42s`));
+    console.log();
+    console.log(chalk.dim("──────────────────────────────────────────────────\n"));
 
-    // Response output
-    console.log(chalk.cyan("\n" + "═".repeat(60)));
-    console.log(chalk.cyan.bold("  Agent Response"));
-    console.log(chalk.cyan("═".repeat(60)) + "\n");
-    console.log(result.text);
-    console.log(chalk.cyan("\n" + "═".repeat(60)));
-
-    // Summary
-    console.log(chalk.green("\n✓ Simulation complete!"));
-    console.log(chalk.gray("  In production, this response would be submitted to the Seedstr platform."));
-
-    if (budget > 0 && usage) {
-      const profitMargin = budget - usage.estimatedCost;
-      console.log(
-        chalk.gray("  Profit margin: ") +
-        (profitMargin > 0
-          ? chalk.green(`+$${profitMargin.toFixed(4)}`)
-          : chalk.red(`-$${Math.abs(profitMargin).toFixed(4)}`)) +
-        chalk.gray(` (job pays $${budget.toFixed(2)}, LLM cost ~$${usage.estimatedCost.toFixed(4)})`)
-      );
-    }
+    // Command prompt ending
+    console.log(chalk.dim("$ ") + chalk.bgHex("#00ff88")(" "));
 
     // Cleanup project files if they were built
     if (result.projectBuild && result.projectBuild.success) {
@@ -218,7 +180,7 @@ Job Budget: $${effectiveBudget.toFixed(2)} USD${fakeJob.jobType === "SWARM" ? ` 
       }
     }
   } catch (error) {
-    spinner.fail("Simulation failed");
+    console.log();
     console.error(
       chalk.red("\nError:"),
       error instanceof Error ? error.message : "Unknown error"

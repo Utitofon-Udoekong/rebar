@@ -22,89 +22,57 @@ function timestamp(): string {
 export const logger = {
   debug(message: string, ...args: unknown[]): void {
     if (shouldLog("debug")) {
-      console.log(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.magenta("[DEBUG]"),
-        message,
-        ...args
-      );
+      console.log(chalk.dim(`  ${message}`), ...args);
     }
   },
 
   info(message: string, ...args: unknown[]): void {
     if (shouldLog("info")) {
-      console.log(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.blue("[INFO]"),
-        message,
-        ...args
-      );
+      console.log(chalk.dim(`  ${message}`), ...args);
     }
   },
 
   success(message: string, ...args: unknown[]): void {
     if (shouldLog("info")) {
-      console.log(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.green("[SUCCESS]"),
-        message,
-        ...args
-      );
+      console.log(chalk.green(`✓ ${message}`), ...args);
     }
   },
 
   warn(message: string, ...args: unknown[]): void {
     if (shouldLog("warn")) {
-      console.log(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.yellow("[WARN]"),
-        message,
-        ...args
-      );
+      console.log(chalk.yellow(`⚠ ${message}`), ...args);
     }
   },
 
   error(message: string, ...args: unknown[]): void {
     if (shouldLog("error")) {
-      console.error(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.red("[ERROR]"),
-        message,
-        ...args
-      );
+      console.error(chalk.red(`✗ ${message}`), ...args);
     }
   },
 
   // Special formatting for agent events
+  // Special formatting for agent events
   job(action: string, jobId: string, details?: string): void {
     if (shouldLog("info")) {
-      console.log(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.cyan("[JOB]"),
-        chalk.bold(action),
-        chalk.dim(jobId.substring(0, 8) + "..."),
-        details ? chalk.gray(details) : ""
-      );
+      if (action === "Found" || action === "Processing") {
+        console.log(chalk.dim(`\n──────────────────────────────────────────────────\n`));
+        console.log(chalk.dim(`JOB ${action.toUpperCase()} · ${details || jobId}`));
+        console.log(chalk.dim(`──────────────────────────────────────────────────\n`));
+      } else {
+        console.log(chalk.green(`✓ ${action} ${details ? `· ${details}` : ""}`));
+      }
     }
   },
 
   tool(name: string, status: "start" | "success" | "error", details?: string): void {
     if (shouldLog("debug")) {
-      const statusIcon =
-        status === "start" ? "⚡" : status === "success" ? "✓" : "✗";
-      const statusColor =
-        status === "start"
-          ? chalk.yellow
-          : status === "success"
-          ? chalk.green
-          : chalk.red;
-      console.log(
-        chalk.gray(`[${timestamp()}]`),
-        chalk.magenta("[TOOL]"),
-        statusColor(statusIcon),
-        chalk.bold(name),
-        details ? chalk.gray(details) : ""
-      );
+      if (status === "start") {
+        console.log(chalk.dim(`→ tool: `) + chalk.green(name));
+      } else if (status === "error") {
+        console.log(chalk.red(`✗ tool error: `) + chalk.dim(name) + (details ? chalk.dim(` · ${details}`) : ""));
+      } else {
+        console.log(chalk.green(`✓ tool success: `) + chalk.dim(name));
+      }
     }
   },
 };
