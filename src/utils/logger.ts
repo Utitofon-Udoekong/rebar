@@ -34,7 +34,7 @@ export const logger = {
 
   success(message: string, ...args: unknown[]): void {
     if (shouldLog("info")) {
-      console.log(chalk.green(`✓ ${message}`), ...args);
+      console.log(chalk.yellow(`✓ ${message}`), ...args);
     }
   },
 
@@ -59,7 +59,7 @@ export const logger = {
         console.log(chalk.dim(`JOB ${action.toUpperCase()} · ${details || jobId}`));
         console.log(chalk.dim(`──────────────────────────────────────────────────\n`));
       } else {
-        console.log(chalk.green(`✓ ${action} ${details ? `· ${details}` : ""}`));
+        console.log(chalk.yellow(`✓ ${action} ${details ? `· ${details}` : ""}`));
       }
     }
   },
@@ -67,11 +67,11 @@ export const logger = {
   tool(name: string, status: "start" | "success" | "error", details?: string): void {
     if (shouldLog("debug")) {
       if (status === "start") {
-        console.log(chalk.dim(`→ tool: `) + chalk.green(name));
+        console.log(chalk.dim(`→ tool: `) + chalk.yellow(name));
       } else if (status === "error") {
         console.log(chalk.red(`✗ tool error: `) + chalk.dim(name) + (details ? chalk.dim(` · ${details}`) : ""));
       } else {
-        console.log(chalk.green(`✓ tool success: `) + chalk.dim(name));
+        console.log(chalk.yellow(`✓ tool success: `) + chalk.dim(name));
       }
     }
   },

@@ -173,8 +173,8 @@ Muted text:    #666666
 Body text:     #999999
 Primary text:  #ffffff
 
-Accent green:  #00ff88    status indicators, success, primary CTA hover
-Accent orange: #ff6b35    bonus enhancement panel only
+Accent yellow: #ffd700    status indicators, success, primary CTA hover
+Accent orange: #ff3300    bonus enhancement panel only
 \`\`\`
 
 ### Typography
@@ -217,7 +217,7 @@ Use this for all single-file submissions:
           colors: {
             bg: '#000000', surface: '#0f0f0f', elevated: '#141414',
             border: '#1f1f1f', muted: '#666666',
-            green: '#00ff88', orange: '#ff6b35',
+            yellow: '#ffd700', orange: '#ff3300',
           },
           fontFamily: {
             mono: ['JetBrains Mono', 'monospace'],
@@ -231,7 +231,7 @@ Use this for all single-file submissions:
   <style>
     * { box-sizing: border-box; }
     body { background: #000; color: #fff; font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
-    ::selection { background: #00ff88; color: #000; }
+    ::selection { background: #ffd700; color: #000; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: #000; }
     ::-webkit-scrollbar-thumb { background: #1f1f1f; }
@@ -243,7 +243,7 @@ Use this for all single-file submissions:
   <nav class="border-b border-[#1f1f1f] px-6 h-12 flex items-center justify-between sticky top-0 bg-black z-50">
     <span class="font-mono text-sm font-bold">[APP NAME]</span>
     <span class="flex items-center gap-1.5">
-      <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-pulse"></span>
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#ffd700] animate-pulse"></span>
       <span class="font-mono text-xs text-[#666]">ONLINE</span>
     </span>
   </nav>
@@ -259,11 +259,11 @@ Use this for all single-file submissions:
 Always render the bonus enhancement in this wrapper — works in any stack:
 
 \`\`\`html
-<div style="position:relative; border:1px solid rgba(255,107,53,0.4); background:#0f0f0f; padding:20px; margin-bottom:1px;">
-  <div style="position:absolute; top:0; left:0; right:0; height:2px; background:#ff6b35;"></div>
+<div style="position:relative; border:1px solid rgba(255,51,0,0.4); background:#0f0f0f; padding:20px; margin-bottom:1px;">
+  <div style="position:absolute; top:0; left:0; right:0; height:2px; background:#ff3300;"></div>
   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
-    <span style="font-family:monospace; font-size:11px; color:#ff6b35; text-transform:uppercase; letter-spacing:.1em;">✦ [BONUS FEATURE NAME]</span>
-    <span style="font-family:monospace; font-size:11px; color:#ff6b35;">● ACTIVE</span>
+    <span style="font-family:monospace; font-size:11px; color:#ff3300; text-transform:uppercase; letter-spacing:.1em;">✦ [BONUS FEATURE NAME]</span>
+    <span style="font-family:monospace; font-size:11px; color:#ff3300;">● ACTIVE</span>
   </div>
   <p style="font-family:monospace; font-size:11px; color:#666; margin-bottom:14px;">[What this adds and why it's useful]</p>
   <!-- bonus UI -->
@@ -314,8 +314,8 @@ Opens by double-clicking. No server, no install, no build step required.
     .mono{font-family:'JetBrains Mono',monospace}
     .label{font-family:'JetBrains Mono',monospace;font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;display:block}
     .panel{background:#0f0f0f;border:1px solid #1f1f1f;padding:24px}
-    .bonus{background:#0f0f0f;border:1px solid rgba(255,107,53,.4);padding:24px;position:relative;margin-bottom:2px}
-    .bonus::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#ff6b35}
+    .bonus{background:#0f0f0f;border:1px solid rgba(255,51,0,.4);padding:24px;position:relative;margin-bottom:2px}
+    .bonus::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#ff3300}
     .row{display:grid;border:1px solid #1f1f1f;margin-bottom:2px}
     @media(min-width:640px){.row-2{grid-template-columns:1fr 1fr}}
     .cell{padding:24px;border-right:1px solid #1f1f1f}
@@ -326,7 +326,7 @@ Opens by double-clicking. No server, no install, no build step required.
   <div style="border-bottom:1px solid #1f1f1f;padding:10px 32px;display:flex;justify-content:space-between;align-items:center">
     <span class="mono" style="font-size:11px;color:#666">PROJECT OVERVIEW · REBAR</span>
     <span style="display:flex;align-items:center;gap:6px">
-      <span style="width:6px;height:6px;border-radius:50%;background:#00ff88;display:inline-block"></span>
+      <span style="width:6px;height:6px;border-radius:50%;background:#ffd700;display:inline-block"></span>
       <span class="mono" style="font-size:11px;color:#666">DELIVERED</span>
     </span>
   </div>
@@ -348,8 +348,8 @@ Opens by double-clicking. No server, no install, no build step required.
     </div>
     <div class="bonus">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
-        <span class="mono" style="font-size:11px;color:#ff6b35;text-transform:uppercase">✦ [INJECT: Bonus Feature Name]</span>
-        <span class="mono" style="font-size:11px;color:#ff6b35">UNREQUESTED · INCLUDED</span>
+        <span class="mono" style="font-size:11px;color:#ff3300;text-transform:uppercase">✦ [INJECT: Bonus Feature Name]</span>
+        <span class="mono" style="font-size:11px;color:#ff3300">UNREQUESTED · INCLUDED</span>
       </div>
       <p style="font-size:14px;margin-bottom:6px">[INJECT: what it does]</p>
       <p class="mono" style="font-size:11px;color:#666">[INJECT: why this adds value]</p>

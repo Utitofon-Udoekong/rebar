@@ -90,7 +90,7 @@ export async function simulateCommand(options: SimulateOptions): Promise<void> {
   };
 
   console.log("\n" + chalk.dim("$ ") + chalk.white.bold("rebar start"));
-  console.log(chalk.green("✓ Connected to Seedstr · polling every 30s\n"));
+  console.log(chalk.yellow("✓ Connected to Seedstr · polling every 30s\n"));
   console.log(chalk.dim("──────────────────────────────────────────────────\n"));
   console.log(
     chalk.dim("JOB RECEIVED · ") +
@@ -148,23 +148,23 @@ Job Budget: $${effectiveBudget.toFixed(2)} USD${fakeJob.jobType === "SWARM" ? ` 
     }
 
     // Parse prompt for some fake values for the demo (or extract if needed)
-    console.log(chalk.dim("→ type: ") + chalk.green("dashboard"));
-    console.log(chalk.dim("→ stack: ") + chalk.green("index.html + D3"));
-    console.log(chalk.dim("→ bonus: ") + chalk.hex("#ff6b35")("AI insight panel\n"));
+    console.log(chalk.dim("→ type: ") + chalk.yellow("dashboard"));
+    console.log(chalk.dim("→ stack: ") + chalk.yellow("index.html + D3"));
+    console.log(chalk.dim("→ bonus: ") + chalk.hex("#ff3300")("AI insight panel\n"));
 
-    console.log(chalk.green("✓ Scaffolded · 12 files created"));
-    console.log(chalk.green("✓ Core feature built"));
-    console.log(chalk.green("✓ Bonus enhancement added"));
-    console.log(chalk.green("✓ Audit passed · 0 failures"));
-    console.log(chalk.green("✓ Packaged → submission.zip\n"));
+    console.log(chalk.yellow("✓ Scaffolded · 12 files created"));
+    console.log(chalk.yellow("✓ Core feature built"));
+    console.log(chalk.yellow("✓ Bonus enhancement added"));
+    console.log(chalk.yellow("✓ Audit passed · 0 failures"));
+    console.log(chalk.yellow("✓ Packaged → submission.zip\n"));
 
     console.log(chalk.dim("──────────────────────────────────────────────────\n"));
-    console.log(chalk.dim("Submitted in ") + chalk.green(`8m 42s`));
+    console.log(chalk.dim("Submitted in ") + chalk.yellow(`8m 42s`));
     console.log();
     console.log(chalk.dim("──────────────────────────────────────────────────\n"));
 
     // Command prompt ending
-    console.log(chalk.dim("$ ") + chalk.bgHex("#00ff88")(" "));
+    console.log(chalk.dim("$ ") + chalk.bgHex("#ffd700")(" "));
 
     // Cleanup project files if they were built
     if (result.projectBuild && result.projectBuild.success) {

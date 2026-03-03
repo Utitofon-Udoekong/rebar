@@ -15,8 +15,8 @@
         --dim: #888888;
         --text: #e8e8e8;
         --bright: #ffffff;
-        --green: #00ff88;
-        --orange: #ff6b35;
+        --yellow: #ffd700;
+        --orange: #ff3300;
         --mono: 'JetBrains Mono', monospace;
         --display: 'Syne', sans-serif;
     }
@@ -30,7 +30,7 @@
     }
 
     ::selection {
-        background: var(--green);
+        background: var(--yellow);
         color: #000;
     }
 
@@ -78,7 +78,7 @@
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background: var(--green);
+        background: var(--yellow);
         animation: pulse 2s ease-in-out infinite;
     }
 
@@ -108,8 +108,8 @@
     }
 
     .nav-status .badge {
-        color: var(--green);
-        border: 1px solid rgba(0, 255, 136, 0.3);
+        color: var(--yellow);
+        border: 1px solid rgba(255, 215, 0, 0.3);
         padding: 2px 8px;
         font-size: 9px;
     }
@@ -166,7 +166,7 @@
     }
 
     .hero-title .accent {
-        color: var(--green);
+        color: var(--yellow);
     }
 
     .hero-sub {
@@ -202,8 +202,8 @@
     }
 
     .btn:hover {
-        border-color: var(--green);
-        color: var(--green);
+        border-color: var(--yellow);
+        color: var(--yellow);
     }
 
     .btn-primary {
@@ -214,8 +214,8 @@
     }
 
     .btn-primary:hover {
-        background: var(--green);
-        border-color: var(--green);
+        background: var(--yellow);
+        border-color: var(--yellow);
         color: var(--bg);
     }
 
@@ -297,8 +297,8 @@
         color: var(--dim);
     }
 
-    .t-green {
-        color: var(--green);
+    .t-yellow {
+        color: var(--yellow);
     }
 
     .t-orange {
@@ -317,7 +317,7 @@
         display: inline-block;
         width: 8px;
         height: 13px;
-        background: var(--green);
+        background: var(--yellow);
         animation: blink 1.2s step-end infinite;
         vertical-align: text-bottom;
     }
@@ -412,7 +412,7 @@
     }
 
     .step:hover .step-accent {
-        background: var(--green);
+        background: var(--yellow);
     }
 
     /* ── THE PLUS ONE ── */
@@ -515,7 +515,7 @@
     }
 
     .ex-built .plus {
-        color: var(--green);
+        color: var(--yellow);
     }
 
     /* ── STATS ROW ── */
@@ -546,7 +546,7 @@
 
     .stat-value .unit {
         font-size: 20px;
-        color: var(--green);
+        color: var(--yellow);
     }
 
     .stat-label {
